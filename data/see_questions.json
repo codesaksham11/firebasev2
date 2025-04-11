@@ -1,0 +1,156 @@
+[
+    {
+        "subject": "Science",
+        "question": "What is the chemical symbol for Water?",
+        "options": {
+            "a": "O2",
+            "b": "H2O",
+            "c": "CO2",
+            "d": "NaCl"
+        },
+        "correctAnswer": "b"
+    },
+    {
+        "subject": "Science",
+        "question": "Which planet is known as the Red Planet?",
+        "options": {
+            "a": "Earth",
+            "b": "Mars",
+            "c": "Jupiter",
+            "d": "Venus"
+        },
+        "correctAnswer": "b"
+    },
+    {
+        "subject": "Science",
+        "question": "What is the powerhouse of the cell?",
+        "options": {
+            "a": "Nucleus",
+            "b": "Ribosome",
+            "c": "Mitochondria",
+            "d": "Chloroplast"
+        },
+        "correctAnswer": "c"
+    },
+     {
+        "subject": "Science",
+        "question": "What force keeps us on the ground?",
+        "options": {
+            "a": "Magnetism",
+            "b": "Friction",
+            "c": "Gravity",
+            "d": "Tension"
+        },
+        "correctAnswer": "c"
+    },
+    {
+        "subject": "Math",
+        "question": "What is 5 + 7?",
+        "options": {
+            "a": "10",
+            "b": "11",
+            "c": "12",
+            "d": "13"
+        },
+        "correctAnswer": "c"
+    },
+    {
+        "subject": "Math",
+        "question": "What is the value of Pi (approx.)?",
+        "options": {
+            "a": "3.14",
+            "b": "2.71",
+            "c": "1.61",
+            "d": "4.20"
+        },
+        "correctAnswer": "a"
+    },
+     {
+        "subject": "Math",
+        "question": "If a triangle has angles 90°, 45°, what is the third angle?",
+        "options": {
+            "a": "30°",
+            "b": "45°",
+            "c": "60°",
+            "d": "90°"
+        },
+        "correctAnswer": "b"
+    },
+    {
+        "subject": "OPT Math",
+        "question": "What is the derivative of x^2?",
+        "options": {
+            "a": "2x",
+            "b": "x",
+            "c": "x^2/2",
+            "d": "2"
+        },
+        "correctAnswer": "a"
+    },
+    {
+        "subject": "OPT Math",
+        "question": "What is sin(90°)?",
+        "options": {
+            "a": "0",
+            "b": "0.5",
+            "c": "1",
+            "d": "-1"
+        },
+        "correctAnswer": "c"
+    },
+     {
+        "subject": "OPT Math",
+        "question": "log₁₀(100) equals?",
+        "options": {
+            "a": "1",
+            "b": "2",
+            "c": "10",
+            "d": "100"
+        },
+        "correctAnswer": "b"
+    },
+    {
+        "subject": "Social",
+        "question": "What is the capital of Nepal?",
+        "options": {
+            "a": "Pokhara",
+            "b": "Biratnagar",
+            "c": "Lalitpur",
+            "d": "Kathmandu"
+        },
+        "correctAnswer": "d"
+    },
+    {
+        "subject": "Social",
+        "question": "Which is the highest peak in the world?",
+        "options": {
+            "a": "K2",
+            "b": "Kangchenjunga",
+            "c": "Mount Everest",
+            "d": "Lhotse"
+        },
+        "correctAnswer": "c"
+    },
+     {
+        "subject": "Social",
+        "question": "Who is known as the 'Light of Asia'?",
+        "options": {
+            "a": "Mahatma Gandhi",
+            "b": "Gautam Buddha",
+            "c": "Prithvi Narayan Shah",
+            "d": "Nelson Mandela"
+        },
+        "correctAnswer": "b"
+    },
+     {
+        "subject": "Social",
+        "question": "When was the first Constituent Assembly election held in Nepal?",
+        "options": {
+            "a": "2006 AD",
+            "b": "2008 AD",
+            "c": "2013 AD",
+            "d": "2017 AD"
+        },
+        "correctAnswer": "b"
+    }
+]
