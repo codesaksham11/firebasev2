@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Updated Title -->
+    <title>Basic Entrance Quiz</title>
+    <!-- Link to basic CSS -->
+    <link rel="stylesheet" href="basic_mcq.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="quiz-container">
+        <header class="quiz-header">
+            <!-- Updated Title -->
+            <h1>Basic Entrance Quiz</h1>
+            <div class="header-controls">
+                <!-- Back button goes to basic_setup -->
+                <button id="back-button" class="button secondary-button">← Back to Setup</button>
+                <div id="timer" class="timer-display">Time Left: <span>--:--</span></div>
+            </div>
+        </header>
+
+        <div id="loading-state" class="loading">Loading Questions...</div>
+
+        <form id="quiz-form" class="hidden">
+            <div id="questions-area">
+                <!-- Questions injected here -->
+            </div>
+
+            <div class="submit-section">
+                <button type="submit" id="submit-quiz-button" class="button primary-button">
+                    Submit Basic Quiz
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Confirmation Modal (same structure as before) -->
+    <div id="confirmation-modal" class="modal">
+        <div class="modal-content">
+            <h2>Leave Quiz?</h2>
+            <p>Are you sure you want to go back? Your current quiz progress will be lost.</p>
+            <div class="modal-actions">
+                <button id="confirm-back-button" class="button danger-button">Yes, Leave</button>
+                <button id="cancel-back-button" class="button secondary-button">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to basic JS with type="module" -->
+    <script type="module" src="basic_mcq.js"></script>
+</body>
+</html>
