@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrance Portal</title>
+    <!-- Existing CSS Link (Keep this) -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- ****** START: Embedded CSS for Hamburger Menu ****** -->
+    <style>
+        /* Hamburger Button Styling */
+        #hamburger-btn {
+            position: fixed; /* Changed to fixed to stay in view */
+            top: 25px;
+            right: 30px;
+            width: 40px;
+            height: 30px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            padding: 0;
+            z-index: 1050; /* High z-index to be above other elements */
+            outline: none; /* Remove focus outline */
+        }
+
+        #hamburger-btn .bar {
+            display: block;
+            width: 100%;
+            height: 4px; /* Slightly thicker bars */
+            background-color: #ffffff; /* White bars */
+            border-radius: 2px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Animation for hamburger to 'X' (Optional but nice) */
+         #hamburger-btn.open .bar1 {
+            transform: translateY(13px) rotate(45deg);
+         }
+         #hamburger-btn.open .bar2 {
+            opacity: 0;
+         }
+         #hamburger-btn.open .bar3 {
+             transform: translateY(-13px) rotate(-45deg);
+         }
+
+
+        /* Side Menu Panel Styling */
+        #side-menu {
+            position: fixed;
+            top: 0;
+            right: -280px; /* Start off-screen (adjust width as needed) */
+            width: 250px; /* Menu width */
+            height: 100%;
+            background-color: rgba(40, 40, 60, 0.95); /* Darker semi-transparent background */
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+            transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smoother transition */
+            z-index: 1040; /* Below button, above overlay */
+            padding-top: 80px; /* Space below hamburger */
+            backdrop-filter: blur(5px); /* Optional: Blur background behind menu */
+        }
+
+        #side-menu.open {
+            right: 0; /* Slide in */
+        }
+
+        #side-menu .menu-item {
+            display: flex; /* Use flex for icon alignment */
+            align-items: center;
+            padding: 18px 25px;
+            color: #f0f0f0; /* Lighter text color */
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: 600;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+         #side-menu .menu-item:first-child {
+             border-top: 1px solid rgba(255, 255, 255, 0.1); /* Add top border to first item */
+         }
+
+
+        #side-menu .menu-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #ffffff; /* Brighter white on hover */
+        }
+
+        #side-menu .menu-icon {
+            margin-right: 15px;
+            font-size: 1.3em;
+            width: 25px; /* Ensure consistent icon spacing */
+            text-align: center;
+        }
+
+        /* Menu Overlay */
+        #menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1030; /* Below side menu */
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0s linear 0.4s; /* Delay visibility change */
+        }
+
+        #menu-overlay.open {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.4s ease; /* Fade in */
+        }
+
+         /* Adjust main container padding if needed when menu might overlap */
+         @media (max-width: 480px) {
+             #hamburger-btn {
+                 top: 15px;
+                 right: 15px;
+             }
+              #side-menu {
+                 width: 220px;
+                 right: -250px; /* Adjust start position */
+                 padding-top: 70px;
+              }
+         }
+
+    </style>
+    <!-- ****** END: Embedded CSS for Hamburger Menu ****** -->
+
+</head>
+<body>
+
+    <!-- ****** START: Hamburger Menu HTML ****** -->
+    <button id="hamburger-btn" aria-label="Open Menu" aria-expanded="false">
+        <span class="bar bar1"></span>
+        <span class="bar bar2"></span>
+        <span class="bar bar3"></span>
+    </button>
+
+    <nav id="side-menu" aria-hidden="true">
+        <a href="https://studymaterialsv2.pages.dev" class="menu-item" target="_blank" rel="noopener noreferrer">
+            <span class="menu-icon">🏠</span> <!-- Simple Home Icon -->
+            Home
+        </a>
+        <a href="getnotes.html" class="menu-item">
+            <span class="menu-icon">ⓘ</span> <!-- Simple Info Icon -->
+            Get Code
+        </a>
+        <!-- Add more links here if needed -->
+    </nav>
+
+    <div id="menu-overlay"></div>
+    <!-- ****** END: Hamburger Menu HTML ****** -->
+
+
+    <!-- ****** START: Original Body Content ****** -->
+    <div class="container">
+        <header>
+            <h1>Welcome to the Entrance Portal</h1>
+            <p>Select your entrance type or enter an access code below.</p>
+        </header>
+
+        <nav class="options-container">
+            <a href="see_setup.html" class="option-button option-see">
+                <span class="icon">👁️</span>
+                See Exams
+            </a>
+            <a href="basic_setup.html" class="option-button option-basic">
+                <span class="icon"> B </span>
+                Basic Entrance
+            </a>
+            <a href="ktm_setup.html" class="option-button option-ktm">
+                <span class="icon"> K </span>
+                KTM Entrance
+            </a>            
+        </nav>
+
+        <!-- Authentication Section -->
+        <div id="auth-container" class="auth-container">
+            <button id="login-btn" class="auth-button">Login with Google</button>
+            <div id="user-info" style="display: none;">
+                <span id="user-email"></span>
+                <button id="logout-btn" class="auth-button">Logout</button>
+            </div>
+        </div>
+
+        <!-- Protected File Access Buttons -->
+        <div class="file-access-container">
+            <button class="access-button" onclick="requestAccess('basic_mcq.html')">Access Basic MCQs</button>
+            <button class="access-button" onclick="requestAccess('see_mcq.html')">Access See MCQs</button>
+            <button class="access-button" onclick="requestAccess('ktm_mcq.html')">Access KTM MCQs</button>
+        </div>
+        <div class="code-entry-container" style="margin-top: 20px;">
+            <button id="enter-code-btn" class="code-button">Enter Access Code</button>
+        </div>
+    </div>
+
+    <!-- Code Entry Modal (Keep this as it was) -->
+    <div id="code-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">×</span>
+            <h2>Enter Access Code</h2>
+            <p>Select the level for your code:</p>
+            <div class="level-selection">
+                <label>
+                    <input type="radio" name="codeLevel" value="see" checked> See
+                </label>
+                <label>
+                    <input type="radio" name="codeLevel" value="basic"> Basic
+                </label>
+                <label>
+                    <input type="radio" name="codeLevel" value="ktm"> KTM
+                </label>
+            </div>
+            <input type="text" id="code-input" placeholder="Enter your code here...">
+            <button id="submit-code-btn">Verify Code</button>
+            <p id="error-message" class="error-msg"></p>
+            <p id="success-message" class="success-msg"></p>
+        </div>
+    </div>
+    <!-- ****** END: Original Body Content ****** -->
+
+
+    <!-- Original Script Link (Keep this) -->
+    <script src="app.js"></script> <!-- Load app.js for Firebase functionality -->
+
+    <!-- ****** START: Embedded JS for Hamburger Menu ****** -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburgerBtn = document.getElementById('hamburger-btn');
+            const sideMenu = document.getElementById('side-menu');
+            const menuOverlay = document.getElementById('menu-overlay');
+
+            function toggleMenu(isOpen) {
+                 // Add/remove 'open' class based on desired state
+                 sideMenu.classList.toggle('open', isOpen);
+                 menuOverlay.classList.toggle('open', isOpen);
+                 hamburgerBtn.classList.toggle('open', isOpen);
+
+                 // Update ARIA attributes for accessibility
+                 hamburgerBtn.setAttribute('aria-expanded', isOpen);
+                 sideMenu.setAttribute('aria-hidden', !isOpen);
+            }
+
+            // Toggle menu on button click
+            hamburgerBtn.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent click from bubbling up
+                const isCurrentlyOpen = sideMenu.classList.contains('open');
+                toggleMenu(!isCurrentlyOpen); // Toggle to the opposite state
+            });
+
+            // Close menu on overlay click
+            menuOverlay.addEventListener('click', () => {
+                toggleMenu(false); // Explicitly close
+            });
+
+             // Optional: Close menu when clicking a menu item (especially for same-page links, not needed here but good practice)
+             /*
+             sideMenu.querySelectorAll('.menu-item').forEach(item => {
+                 item.addEventListener('click', () => {
+                     // Don't close for external links automatically
+                     if (!item.target || item.target !== '_blank') {
+                        toggleMenu(false);
+                     }
+                 });
+             });
+             */
+
+             // Optional: Close menu on Escape key press
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && sideMenu.classList.contains('open')) {
+                    toggleMenu(false);
+                }
+            });
+
+        });
+    </script>
+    <!-- ****** END: Embedded JS for Hamburger Menu ****** -->
+
+</body>
+</html>
