@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Updated Title -->
+    <title>Basic Quiz Results</title>
+    <!-- Link to Basic results CSS -->
+    <link rel="stylesheet" href="basic_result.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <!-- Updated Title -->
+            <h1>Basic Quiz Results</h1>
+        </header>
+
+        <div id="results-summary" class="summary-section">
+            <div id="loading-results" class="loading">Loading Results...</div>
+            <div id="summary-content" class="hidden">
+                 <p id="encouragement-message" class="encouragement"></p>
+                 <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Score:</span>
+                        <span id="score" class="stat-value">-- / --</span>
+                    </div>
+                    <div class="stat-item">
+                         <span class="stat-label">Percentage:</span>
+                         <span id="percentage" class="stat-value">--%</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Time Taken:</span>
+                        <span id="time-taken" class="stat-value">--:--</span>
+                    </div>
+                </div>
+                <button id="toggle-details-button" class="button tertiary-button">Show Details</button>
+            </div>
+             <div id="error-loading" class="error-message hidden">
+                Could not load results. Please try taking the quiz again.
+            </div>
+        </div>
+
+        <div id="detailed-results" class="detailed-section hidden">
+            <h2>Detailed Answers</h2>
+            <div id="answers-breakdown">
+                <!-- Detailed answers injected here -->
+            </div>
+            <div class="legend">
+                <h3>Legend:</h3>
+                <ul>
+                    <li><span class="legend-color correct"></span> Correct Answer</li>
+                    <li><span class="legend-color incorrect"></span> Incorrect Answer</li>
+                    <li><span class="legend-color skipped"></span> Skipped Question</li>
+                    <li><span class="icon">✅</span> Correct Option</li>
+                    <li><span class="icon">❌</span> Your Incorrect Choice</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+             <button id="back-to-portal" class="button secondary-button">
+                ← Back to Portal
+             </button>
+             <!-- Updated Text -->
+             <button id="start-new-quiz" class="button primary-button">
+                Start New Basic Quiz →
+             </button>
+        </div>
+    </div>
+
+    <!-- Link to Basic results JS -->
+    <script src="basic_result.js"></script>
+</body>
+</html>
