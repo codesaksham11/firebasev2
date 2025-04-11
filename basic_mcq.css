@@ -1,0 +1,297 @@
+/* Base Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    /* New light teal/grey gradient */
+    background: linear-gradient(135deg, #e0f7fa 0%, #f1f8e9 100%);
+    color: #212121; /* Darker text */
+    margin: 0;
+    padding: 20px;
+}
+
+.quiz-container {
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    padding: 25px 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid #cfd8dc; /* Blue-grey border */
+}
+
+/* Header */
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* New border color */
+    border-bottom: 2px solid #b2ebf2;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.quiz-header h1 {
+    margin: 0;
+    font-size: 2em;
+    /* New header color */
+    color: #006064; /* Dark cyan */
+    flex-grow: 1;
+    text-align: left;
+}
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.timer-display {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: #004d40; /* Dark teal */
+    background-color: #e0f2f1; /* Very light teal background */
+    padding: 8px 15px;
+    border-radius: 20px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.timer-display.warning {
+    color: #b71c1c; /* Dark red for warning */
+    background-color: #ffcdd2; /* Light red */
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+/* Loading State */
+.loading {
+    text-align: center;
+    font-size: 1.2em;
+    color: #546e7a; /* Blue-grey */
+    padding: 40px 0;
+}
+
+/* Hidden Utility */
+.hidden {
+    display: none;
+}
+
+/* Question Area */
+#questions-area {
+    margin-bottom: 30px;
+}
+
+.subject-group {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #90a4ae; /* Blue-grey dashed border */
+}
+.subject-group:last-child {
+     border-bottom: none;
+     margin-bottom: 0;
+     padding-bottom: 0;
+}
+
+.subject-group h2 {
+    font-size: 1.6em;
+    /* New subject header color */
+    color: #00796b; /* Teal */
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #b2dfdb; /* Light teal */
+}
+
+/* Question Card (Grid Item) */
+.question-card {
+    background-color: #f4f6f7; /* Slightly off-white */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #eceff1; /* Light blue-grey border */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.question-card:hover {
+     box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.question-text {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    color: #37474f; /* Dark blue-grey */
+    line-height: 1.5;
+}
+
+.question-text strong {
+    margin-right: 8px;
+    color: #00796b; /* Teal for number */
+}
+
+/* Options Styling */
+.options-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.options-group label {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    border: 1px solid #b0bec5; /* Medium blue-grey border */
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #fff;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.options-group label:hover {
+    background-color: #eceff1; /* Light hover */
+    border-color: #4db6ac; /* Teal highlight on hover */
+}
+
+.options-group input[type="radio"] {
+    margin-right: 12px;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #78909c; /* Darker blue-grey */
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+    flex-shrink: 0;
+}
+
+.options-group input[type="radio"]:checked {
+    border-color: #00796b; /* Teal border */
+    background-color: #00796b; /* Teal fill */
+    background-clip: content-box;
+    padding: 3px;
+}
+
+.options-group input[type="radio"]:focus {
+     /* New focus ring color */
+     box-shadow: 0 0 0 2px rgba(0, 121, 107, 0.3);
+}
+
+.options-group label span {
+    flex-grow: 1;
+}
+
+/* Submit Section */
+.submit-section {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #cfd8dc; /* Blue-grey border top */
+}
+
+/* General Button Styles */
+.button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.primary-button {
+    /* New primary gradient */
+    background: linear-gradient(45deg, #26a69a, #00796b);
+    color: white;
+}
+.primary-button:hover {
+    background: linear-gradient(45deg, #00897b, #004d40);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.secondary-button {
+    background-color: #546e7a; /* Blue-grey */
+    color: white;
+}
+.secondary-button:hover {
+    background-color: #455a64;
+    transform: translateY(-2px);
+}
+
+.danger-button {
+    background-color: #e53e3e;
+    color: white;
+}
+.danger-button:hover {
+    background-color: #c53030;
+     transform: translateY(-2px);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    color: #333;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 450px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    animation: fadeInModal 0.3s ease-out;
+}
+
+@keyframes fadeInModal {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-content h2 { margin-top: 0; margin-bottom: 15px; color: #444; }
+.modal-content p { margin-bottom: 25px; color: #666; line-height: 1.6; }
+.modal-actions { display: flex; justify-content: space-around; gap: 15px; }
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .quiz-container { padding: 20px 15px; }
+    .quiz-header { flex-direction: column; align-items: flex-start; }
+    .quiz-header h1 { font-size: 1.6em; margin-bottom: 10px; }
+    .header-controls { width: 100%; justify-content: space-between; }
+    .timer-display { font-size: 1.1em; }
+    .question-card { padding: 15px; }
+    .question-text { font-size: 1em; }
+    .options-group label { padding: 10px 12px; font-size: 0.95em; }
+    .button { padding: 10px 20px; font-size: 0.95em; }
+}
+
+@media (max-width: 480px) {
+     .quiz-header h1 { font-size: 1.4em; }
+     .modal-content { padding: 20px; }
+     .modal-actions { flex-direction: column; }
+     .button { width: 90%; margin: 0 auto; }
+}
